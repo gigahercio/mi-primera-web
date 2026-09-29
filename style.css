@@ -4,3 +4,9 @@ h1 {
 p {
   zoom: 3;
 }
+li {
+  zoom: 3;
+}
+img {
+  zoom: 4;
+}
