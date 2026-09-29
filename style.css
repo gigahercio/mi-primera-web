@@ -14,7 +14,7 @@ a {
   zoom: 2;
 }
 .animado {
-  animation: aparecer 2s ease-in-out;
+  animation: aparecer 1s ease-in-out;
 }
 
 @keyframes aparecer {
