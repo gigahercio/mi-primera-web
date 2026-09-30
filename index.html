@@ -39,5 +39,15 @@
   <a href="https://worldofwarcraft.blizzard.com/es-es/">Mi juego favorito</a>
   <a href="https://www.youtube.com/watch?v=gl6RgPzd-cg">Mi primer montaje</a>
    <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHbKxe-uxHQYPrUUy7LEuSz6l54aSWdpEuY177gvgDzQ&s"</h1>
+ <button id="contador">0</button>
+
+<script>
+    let contador = 0;
+
+    document.getElementById("contador").addEventListener("click", function() {
+        contador++;
+        this.textContent = contador;
+    });
+</script>
      </body>       
 </html>
