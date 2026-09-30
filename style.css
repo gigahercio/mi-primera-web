@@ -13,9 +13,6 @@ img {
 a {
   zoom: 2;
 }
-script {
-  zoom: 6;
-}
 .animado {
   animation: aparecer 1s ease-in-out;
 }
