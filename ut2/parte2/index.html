@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Página de ejemplo sobre SuperTuxKart, mi videojuego favorito">
+  <meta name="author" content="Raúl Ibáñez">
+  <title>SuperTuxKart, mi videojuego favorito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Cinzel:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="fantasy-backdrop" aria-hidden="true">
+    <svg class="fantasy-backdrop__svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" focusable="false">
+      <defs>
+        <linearGradient id="scene-sky" x1="0" y1="0" x2="0" y2="1">
+          <stop class="scene-sky-stop--top" offset="0"></stop>
+          <stop class="scene-sky-stop--middle" offset="0.58"></stop>
+          <stop class="scene-sky-stop--horizon" offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="scene-stone" x1="0" y1="0" x2="1" y2="1">
+          <stop class="scene-stone-stop--light" offset="0"></stop>
+          <stop class="scene-stone-stop--middle" offset="0.52"></stop>
+          <stop class="scene-stone-stop--shadow" offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="scene-tower" x1="0" y1="0" x2="1" y2="0">
+          <stop class="scene-tower-stop--light" offset="0"></stop>
+          <stop class="scene-tower-stop--middle" offset="0.5"></stop>
+          <stop class="scene-tower-stop--shadow" offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="scene-banner" x1="0" y1="0" x2="1" y2="0">
+          <stop class="scene-banner-stop--light" offset="0"></stop>
+          <stop class="scene-banner-stop--deep" offset="1"></stop>
+        </linearGradient>
+        <radialGradient id="scene-flame-glow">
+          <stop class="scene-flame-stop--bright" offset="0"></stop>
+          <stop class="scene-flame-stop--soft" offset="0.45"></stop>
+          <stop class="scene-flame-stop--clear" offset="1"></stop>
+        </radialGradient>
+        <radialGradient id="scene-vignette" cx="50%" cy="48%" r="74%">
+          <stop class="scene-vignette-stop--clear" offset="0.42"></stop>
+          <stop class="scene-vignette-stop--edge" offset="1"></stop>
+        </radialGradient>
+        <pattern id="scene-masonry" width="112" height="56" patternUnits="userSpaceOnUse">
+          <path d="M0 55.5H112M56 0V28M0 28H112M0 0H112M0 28V56M112 28V56" class="scene-masonry-lines"></path>
+        </pattern>
+        <g id="scene-cloud-band">
+          <path d="M-115 180c36-38 94-36 124-5 24-47 93-57 129-19 48-17 105 13 111 59h-364z"></path>
+          <path d="M355 280c29-32 81-31 108-4 23-39 77-46 108-14 40-15 88 11 94 49H355z"></path>
+          <path d="M820 158c34-36 89-34 119-5 25-43 87-51 121-16 44-16 96 12 102 54H820z"></path>
+          <path d="M1230 296c30-32 81-31 108-4 23-39 78-46 109-14 39-15 87 11 93 49h-310z"></path>
+        </g>
+        <g id="scene-cloud-band-near">
+          <path d="M-160 365c31-34 86-33 113-4 20-40 78-47 108-14 40-15 91 12 97 51h-318z"></path>
+          <path d="M520 390c25-28 69-26 91-3 19-33 66-39 92-12 34-13 76 10 81 42H520z"></path>
+          <path d="M1050 350c32-34 85-32 112-4 21-38 76-45 106-13 37-14 84 11 90 48h-308z"></path>
+        </g>
+      </defs>
+
+      <rect width="1600" height="900" fill="url(#scene-sky)"></rect>
+      <circle class="scene-sun" cx="800" cy="320" r="118"></circle>
+      <path class="scene-mountain-back" d="M0 525 115 412l93 55 145-177 116 121 132-92 115 111 135-197 145 177 105-90 132 122 121-166 146 181v173H0z"></path>
+      <path class="scene-mountain-front" d="m0 540 174-103 91 57 128-96 147 120 131-79 124 64 122-111 153 126 116-83 141 104 173-92v185H0z"></path>
+      <path class="scene-horizon-haze" d="M0 488c245-38 430 25 657-4 294-37 589-46 943 0v158H0z"></path>
+
+      <g class="scene-clouds scene-clouds--far">
+        <use href="#scene-cloud-band"></use>
+        <use href="#scene-cloud-band" x="1600"></use>
+      </g>
+      <g class="scene-clouds scene-clouds--near">
+        <use href="#scene-cloud-band-near"></use>
+        <use href="#scene-cloud-band-near" x="1600"></use>
+      </g>
+
+      <g class="scene-distant-city">
+        <path d="M85 573V480h58v-45l34-29 34 29v138zm130 0V457h44v-49l34-30 34 30v165zm1080 0V457h44v-49l34-30 34 30v165zm130 0V480h58v-45l34-29 34 29v138z"></path>
+        <path d="M670 535V374h50v-62l80-72 80 72v62h50v161z"></path>
+        <path d="M713 375h174M736 342h128M776 240v-42h48v42" class="scene-distant-detail"></path>
+      </g>
+
+      <path class="scene-wall" d="M0 563h280V468h42v-62h125v62h43v95h660v-95h43v-62h125v62h42v95h240v337H0z"></path>
+      <path class="scene-masonry" d="M0 563h280V468h42v-62h125v62h43v95h660v-95h43v-62h125v62h42v95h240v337H0z"></path>
+
+      <g class="scene-towers">
+        <path d="M294 475V314l74-86 74 86v161zM1158 475V314l74-86 74 86v161z" fill="url(#scene-tower)"></path>
+        <path d="M278 316h180l-90-111zM1142 316h180l-90-111z" fill="url(#scene-stone)"></path>
+        <path d="M282 316h172v20H282zm864 0h172v20h-172z" class="scene-tower-trim"></path>
+        <path d="M320 358h25v53h-25zm70 0h25v53h-25zm794 0h25v53h-25zm70 0h25v53h-25z" class="scene-tower-window"></path>
+        <path d="M300 436h136M1164 436h136" class="scene-stone-highlight"></path>
+      </g>
+
+      <g class="scene-gate-towers">
+        <path d="M455 567V385h54v-67l83-75 83 75v249zM925 567V385h54v-67l83-75 83 75v249z" fill="url(#scene-tower)"></path>
+        <path d="M445 320h240l-93-112h-54zM915 320h240l-93-112h-54z" fill="url(#scene-stone)"></path>
+        <path d="M446 320h238v22H446zm470 0h238v22H916z" class="scene-tower-trim"></path>
+        <path d="M486 397h30v65h-30zm76 0h30v65h-30zm414 0h30v65h-30zm76 0h30v65h-30z" class="scene-tower-window"></path>
+      </g>
+
+      <g class="scene-banner-poles">
+        <path d="M476 300v182m648-182v182" class="scene-banner-pole"></path>
+        <circle cx="476" cy="297" r="7" class="scene-banner-finial"></circle>
+        <circle cx="1124" cy="297" r="7" class="scene-banner-finial"></circle>
+      </g>
+      <g class="scene-banner-cloth scene-banner-cloth--left">
+        <path d="M476 309c33 8 70-5 106 8l-9 116-45 34-46-34z" fill="url(#scene-banner)"></path>
+        <path d="M481 317c28 6 61-4 93 7l-7 99-39 29-40-29z" class="scene-banner-border"></path>
+        <path d="m529 343 17 20-17 20-17-20z" class="scene-banner-sigil"></path>
+      </g>
+      <g class="scene-banner-cloth scene-banner-cloth--right">
+        <path d="M1124 309c33 8 70-5 106 8l-9 116-45 34-46-34z" fill="url(#scene-banner)"></path>
+        <path d="M1129 317c28 6 61-4 93 7l-7 99-39 29-40-29z" class="scene-banner-border"></path>
+        <path d="m1177 343 17 20-17 20-17-20z" class="scene-banner-sigil"></path>
+      </g>
+
+      <path class="scene-gate-arch" d="M535 900V608c0-151 119-254 265-254s265 103 265 254v292z"></path>
+      <path class="scene-gate-opening" d="M598 900V612c0-112 86-195 202-195s202 83 202 195v288z"></path>
+      <path class="scene-gate-door" d="M630 900V612c0-92 73-163 170-163s170 71 170 163v288z"></path>
+      <path class="scene-gate-seam" d="M800 478v422M650 690h300M630 790h340"></path>
+      <path class="scene-gate-studs" d="M674 612v8m0 42v8m0 42v8m252-108v8m0 42v8m0 42v8"></path>
+      <path class="scene-arch-highlight" d="M557 900V610c0-137 108-232 243-232"></path>
+      <path class="scene-arch-highlight scene-arch-highlight--right" d="M1043 900V610c0-137-108-232-243-232"></path>
+      <path class="scene-wall-foot" d="M0 849h535m530 0h535M0 878h1600"></path>
+
+      <g class="scene-braziers">
+        <ellipse class="scene-flame-glow" cx="519" cy="675" rx="50" ry="64" fill="url(#scene-flame-glow)"></ellipse>
+        <ellipse class="scene-flame-glow" cx="1081" cy="675" rx="50" ry="64" fill="url(#scene-flame-glow)"></ellipse>
+        <path d="M505 724h28v92h-28zm-11 0h50v12h-50zm-8 92h66v14h-66zM1067 724h28v92h-28zm-11 0h50v12h-50zm-8 92h66v14h-66z" class="scene-brazier-metal"></path>
+        <path class="scene-flame scene-flame--outer" d="M519 715c-35-32 2-53 4-80 29 28 24 48 18 62 20-18 17-40 12-55 39 42 17 74-8 81-23 6-40-5-26-8zm562 0c-35-32 2-53 4-80 29 28 24 48 18 62 20-18 17-40 12-55 39 42 17 74-8 81-23 6-40-5-26-8z"></path>
+        <path class="scene-flame scene-flame--inner" d="M518 710c-14-17 8-29 9-45 15 15 17 28 9 44 14-13 13-22 11-29 21 24 6 42-11 42-13 0-23-6-18-12zm562 0c-14-17 8-29 9-45 15 15 17 28 9 44 14-13 13-22 11-29 21 24 6 42-11 42-13 0-23-6-18-12z"></path>
+      </g>
+
+      <g class="scene-birds">
+        <g class="scene-bird scene-bird--one">
+          <path d="m0 0 11 6 11-6 10 5 10-5" class="scene-bird-shape"></path>
+          <path d="m44 1 8 5 9-5 9 4 8-4" class="scene-bird-shape"></path>
+        </g>
+        <g class="scene-bird scene-bird--two">
+          <path d="m0 0 9 5 9-5 8 4 8-4" class="scene-bird-shape"></path>
+        </g>
+      </g>
+
+      <g class="scene-motes">
+        <circle class="scene-mote" cx="340" cy="720" r="3"></circle>
+        <circle class="scene-mote" cx="405" cy="780" r="2"></circle>
+        <circle class="scene-mote" cx="1230" cy="710" r="2.5"></circle>
+        <circle class="scene-mote" cx="1300" cy="790" r="2"></circle>
+        <circle class="scene-mote" cx="680" cy="815" r="2"></circle>
+        <circle class="scene-mote" cx="930" cy="800" r="2.5"></circle>
+      </g>
+
+      <rect class="scene-global-shade" width="1600" height="900"></rect>
+      <rect width="1600" height="900" fill="url(#scene-vignette)"></rect>
+    </svg>
+  </div>
+
+  <header>
+    <h1>SuperTuxKart</h1>
+    <p>¿El mejor juego de karts libre de la historia?</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#que-es">Qué es</a></li>
+      <li><a href="#personajes">Personajes</a></li>
+      <li><a href="#ficha">Ficha</a></li>
+      <li><a href="#opinion">Opinión</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2 id="que-es">Qué es SuperTuxKart</h2>
+    <p><strong>SuperTuxKart</strong> es un juego de carreras de karts <em>libre y gratuito</em> en el que corren las mascotas del software libre: Tux, Gnu, Konqi y muchas más. Salió por primera vez en 2004 y sigue actualizándose.</p>
+
+    <h3>Historia del juego</h3>
+    <p>Nació como una continuación de <em>TuxKart</em>. Con los años ha añadido circuitos, personajes, un modo historia contra el malvado Nolok y carreras en línea.</p>
+
+    <h3 id="personajes">Personajes principales</h3>
+    <ul>
+      <li><strong>Tux</strong>: el pingüino de Linux y protagonista.</li>
+      <li><strong>Gnu</strong>: el ñu del proyecto GNU, mentor de Tux.</li>
+      <li><strong>Nolok</strong>: el villano que secuestra a Gnu.</li>
+    </ul>
+
+    <h3 id="ficha">Ficha técnica</h3>
+    <table>
+      <caption>Datos del juego</caption>
+      <tr><th>Primera versión</th><td>2004</td></tr>
+      <tr><th>Última versión</th><td>1.4</td></tr>
+      <tr><th>Plataformas</th><td>Windows, Linux, macOS, Android</td></tr>
+      <tr><th>Licencia</th><td>GPL</td></tr>
+    </table>
+
+    <h3>Por qué es mi videojuego favorito</h3>
+    <p>Porque se puede jugar en cualquier ordenador, porque los circuitos están llenos de detalles y porque cualquiera puede ver cómo está hecho y mejorarlo.</p>
+
+    <h3>Véase también</h3>
+    <ol>
+      <li><a href="https://supertuxkart.net/">Página oficial de SuperTuxKart</a></li>
+      <li><a href="https://es.wikipedia.org/wiki/SuperTuxKart">Artículo en Wikipedia</a></li>
+    </ol>
+
+    <h3 id="opinion">Da tu opinión: del 1 al 10, ¿qué te parece este juego?</h3>
+    <form action="https://webhook.site/" method="post">
+      <p class="notas">
+        <label><input type="radio" name="nota" value="1"> 1</label>
+        <label><input type="radio" name="nota" value="2"> 2</label>
+        <label><input type="radio" name="nota" value="3"> 3</label>
+        <label><input type="radio" name="nota" value="4"> 4</label>
+        <label><input type="radio" name="nota" value="5"> 5</label>
+        <label><input type="radio" name="nota" value="6"> 6</label>
+        <label><input type="radio" name="nota" value="7"> 7</label>
+        <label><input type="radio" name="nota" value="8"> 8</label>
+        <label><input type="radio" name="nota" value="9"> 9</label>
+        <label><input type="radio" name="nota" value="10"> 10</label>
+      </p>
+      <p>
+        <label for="comentario">Comentario</label><br>
+        <textarea id="comentario" name="comentario" rows="4" cols="40"></textarea>
+      </p>
+      <p><button type="submit">Enviar opinión</button></p>
+    </form>
+  </main>
+
+  <aside>
+    <h2>Capturas del juego</h2>
+    <p>Aquí hay algunas imágenes de SuperTuxKart:</p>
+    <div class="galeria">
+      <figure class="destacada">
+        <span class="etiqueta">Libre</span>
+        <label class="visor-trigger" for="zoom-stk1">
+          <img src="img/stk1.jpg" alt="Un kart en un circuito desértico de SuperTuxKart" width="1000" height="563">
+        </label>
+        <figcaption>Un circuito de la versión 1.3. Captura de los autores de SuperTuxKart, CC BY-SA 4.0.</figcaption>
+      </figure>
+      <figure>
+        <label class="visor-trigger" for="zoom-stk2">
+          <img src="img/stk2.jpg" alt="Gnu y Nolok delante de un templo en el modo historia" width="1000" height="750">
+        </label>
+        <figcaption>Gnu y Nolok en el modo historia. Captura de QwertyChouskie, CC BY-SA 4.0.</figcaption>
+      </figure>
+      <figure>
+        <label class="visor-trigger" for="zoom-stk3">
+          <img src="img/stk3.jpg" alt="Carrera en un circuito nevado" width="1000" height="537">
+        </label>
+        <figcaption>Circuito nevado de la versión 0.9. Captura del equipo de SuperTuxKart, CC BY 3.0.</figcaption>
+      </figure>
+      <figure>
+        <label class="visor-trigger" for="zoom-stk4">
+          <img src="img/stk4.jpg" alt="Karts en una carrera junto a un lago" width="1000" height="537">
+        </label>
+        <figcaption>Carrera de la versión 0.9. Captura del equipo de SuperTuxKart, CC BY 3.0.</figcaption>
+      </figure>
+      <figure>
+        <label class="visor-trigger" for="zoom-stk5">
+          <img src="img/stk5.jpg" alt="Un kart saltando en un circuito de la versión 0.9" width="1000" height="537">
+        </label>
+        <figcaption>Otro circuito de la versión 0.9. Captura del equipo de SuperTuxKart, CC BY 3.0.</figcaption>
+      </figure>
+    </div>
+  </aside>
+
+  <input class="visor-toggle" type="checkbox" id="zoom-stk1" aria-label="Ampliar captura del circuito desértico">
+  <input class="visor-toggle" type="checkbox" id="zoom-stk2" aria-label="Ampliar captura de Gnu y Nolok">
+  <input class="visor-toggle" type="checkbox" id="zoom-stk3" aria-label="Ampliar captura del circuito nevado">
+  <input class="visor-toggle" type="checkbox" id="zoom-stk4" aria-label="Ampliar captura de la carrera junto al lago">
+  <input class="visor-toggle" type="checkbox" id="zoom-stk5" aria-label="Ampliar captura del kart saltando">
+
+  <footer>
+    <p><em>Autor de la página: Raúl Ibáñez</em></p>
+  </footer>
+
+  <div class="visor" id="visor-stk1">
+    <label class="visor-backdrop" for="zoom-stk1" aria-hidden="true"></label>
+    <div class="visor-panel" role="group" aria-label="Imagen ampliada">
+      <label class="visor-close" for="zoom-stk1" aria-label="Cerrar imagen ampliada"><span aria-hidden="true">×</span></label>
+      <img class="visor-image" src="img/stk1.jpg" alt="Un kart en un circuito desértico de SuperTuxKart" width="1000" height="563">
+      <p class="visor-caption">Un circuito de la versión 1.3. Captura de los autores de SuperTuxKart, CC BY-SA 4.0.</p>
+    </div>
+  </div>
+  <div class="visor" id="visor-stk2">
+    <label class="visor-backdrop" for="zoom-stk2" aria-hidden="true"></label>
+    <div class="visor-panel" role="group" aria-label="Imagen ampliada">
+      <label class="visor-close" for="zoom-stk2" aria-label="Cerrar imagen ampliada"><span aria-hidden="true">×</span></label>
+      <img class="visor-image" src="img/stk2.jpg" alt="Gnu y Nolok delante de un templo en el modo historia" width="1000" height="750">
+      <p class="visor-caption">Gnu y Nolok en el modo historia. Captura de QwertyChouskie, CC BY-SA 4.0.</p>
+    </div>
+  </div>
+  <div class="visor" id="visor-stk3">
+    <label class="visor-backdrop" for="zoom-stk3" aria-hidden="true"></label>
+    <div class="visor-panel" role="group" aria-label="Imagen ampliada">
+      <label class="visor-close" for="zoom-stk3" aria-label="Cerrar imagen ampliada"><span aria-hidden="true">×</span></label>
+      <img class="visor-image" src="img/stk3.jpg" alt="Carrera en un circuito nevado" width="1000" height="537">
+      <p class="visor-caption">Circuito nevado de la versión 0.9. Captura del equipo de SuperTuxKart, CC BY 3.0.</p>
+    </div>
+  </div>
+  <div class="visor" id="visor-stk4">
+    <label class="visor-backdrop" for="zoom-stk4" aria-hidden="true"></label>
+    <div class="visor-panel" role="group" aria-label="Imagen ampliada">
+      <label class="visor-close" for="zoom-stk4" aria-label="Cerrar imagen ampliada"><span aria-hidden="true">×</span></label>
+      <img class="visor-image" src="img/stk4.jpg" alt="Karts en una carrera junto a un lago" width="1000" height="537">
+      <p class="visor-caption">Carrera de la versión 0.9. Captura del equipo de SuperTuxKart, CC BY 3.0.</p>
+    </div>
+  </div>
+  <div class="visor" id="visor-stk5">
+    <label class="visor-backdrop" for="zoom-stk5" aria-hidden="true"></label>
+    <div class="visor-panel" role="group" aria-label="Imagen ampliada">
+      <label class="visor-close" for="zoom-stk5" aria-label="Cerrar imagen ampliada"><span aria-hidden="true">×</span></label>
+      <img class="visor-image" src="img/stk5.jpg" alt="Un kart saltando en un circuito de la versión 0.9" width="1000" height="537">
+      <p class="visor-caption">Otro circuito de la versión 0.9. Captura del equipo de SuperTuxKart, CC BY 3.0.</p>
+    </div>
+  </div>
+
+</body>
+</html>
